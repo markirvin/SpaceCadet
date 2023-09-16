@@ -1,0 +1,14 @@
+# Audio files
+*.wav
+
+# MPF logs
+*.log
+
+# VS Code files
+/.vscode
+
+# Ignore Monitor, for now
+/Monitor
+
+# Ignore data folder, for now
+/data 

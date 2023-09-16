@@ -1,0 +1,27 @@
+#config_version=5
+
+# light numbering: <board_name>-<port>-<led>
+# 32 LEDs MAX per expansion board port
+# TODO - fix board numbering when it gets wired
+#lights:
+  # l_replay:
+  #   number: pf_exp-1-1
+  #   subtype: led
+  #   type: rgb
+  # l_re_deploy:
+  #   number: pf_exp-1-2
+  #   subtype: led
+  #   type: rgb
+  # l_center_post_save:
+  #   number: pf_exp-1-3
+  #   subtype: led
+  #   type: rgb
+  # l_left_kicker:
+  #   number: pf_exp-1-4
+  #   subtype: led
+  #   type: rgb
+  # l_outlane:
+  #   number: pf_exp-1-5
+  #   subtype: led
+  #   type: rgb
+  

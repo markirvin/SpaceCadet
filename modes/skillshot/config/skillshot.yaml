@@ -1,0 +1,7 @@
+##! mode: skillshot
+#config_version=5
+
+# TODO
+mode:
+  start_events: ball_starting
+  priority: 500

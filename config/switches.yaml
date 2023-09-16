@@ -1,0 +1,115 @@
+#config_version=5
+
+# Notes:
+# - Switches are grouped per board, boards are listed in loop order
+# - Add playfield_active tags for playfield switches that the ball can hit
+
+switches:
+    # Cabinet I/O --------------------------------------------------------
+    # 24 switches (0-23)
+    s_start_button:
+        number: cabinet_io-8
+        tags: start, start_button_switch
+        label: "Start"
+    s_left_flipper_button:
+        number: cabinet_io-9
+        tags: flipper_button_left
+        label: "Left Flipper Button"
+    s_right_flipper_button:
+        number: cabinet_io-17
+        tags: flipper_button_right
+        label: "Right Flipper Button"
+    s_tilt:
+        number: cabinet_io-10
+        tags: tilt_switch
+        label: "Tilt"
+#    s_service_back:
+#        number: cabinet_io-
+#        tags: service_back_switch
+#        label: "Service Back"
+#    s_service_minus:
+#        number: cabinet_io-
+#        tags: service_minus_switch
+#        label: "Service Minus"
+#    s_service_plus:
+#        number: cabinet_io
+#        tags: service_plus_switch
+#        label: "Service Plus"
+#    s_service_select:
+#        number: cabinet_io-
+#        tags: service_select_switch
+#        label: "Service Select"
+
+    # 3208 (0-31) Lower Third I/O ----------------------------------------
+    s_trough_jam:
+        number: lower_io-0 
+        type: NC
+        tags: "Trough Jam Opto Switch"
+    s_trough1:
+        number: lower_io-1
+        type: NC
+        tags: "Trough 1 Opto Switch"
+    s_trough2:
+        number: lower_io-2
+        tags: "Trough 2 Switch"
+    s_trough3:
+        number: lower_io-3
+        tags: "Trough 3 Switch"
+    s_trough4:
+        number: lower_io-4
+        tags: "Trough 4 Switch"
+    s_plunger_lane:
+        number: lower_io-5
+        tags: "Plunger Lane Switch" 
+    # s_left_outlane:
+    #     number: lower_io-6
+    #     tags: playfield_active
+    # s_left_outlane_kickback:
+    #     number: lower_io-7
+    #     type: NC
+    #     tags: playfield_active
+    # s_left_refuel_inlane:
+    #     number: lower_io-8
+    #     tags: playfield_active
+    # s_left_inlane:
+    #     number: lower_io-9
+    #     tags: playfield_active
+    # s_right_inlane:
+    #     number: lower_io-10
+    #     tags: playfield_active
+    # s_right_outlane:
+    #     number: lower_io-11
+    #     tags: playfield_active
+    # s_right_outlane_kickback:
+    #     number: lower_io-12
+    #     type: NC
+    #     tags: playfield_active
+    s_left_flipper_eos:
+        number: lower_io-15
+        tags: left_flipper_end_of_stroke
+        label: "Left Flipper End of Stroke"
+    s_right_flipper_eos:
+        number: lower_io-16
+        tags: right_flipper_end_of_stroke
+        label: "Right Flipper End of Stroke"
+    # s_left_slingshot:
+    #     number: lower_io-17
+    #     tags: playfield_active
+    # s_right_slingshot:
+    #     number: lower_io-18
+    #     tags: playfield_active
+    # s_mission_select_1:
+    #     number: lower_io-19
+    #     tags: playfield_active
+    # s_mission_select_2:
+    #     number: lower_io-20
+    #     tags: playfield_active    
+    # s_mission_select_3:
+    #     number: lower_io-21
+    #     tags: playfield_active
+
+    # 1616 (0-16) Middle Playfield ---------------------------------------
+    # TODO - Add switches
+
+    # 3208 (0-31) Upper Playfield ----------------------------------------
+    # TODO - Add switches

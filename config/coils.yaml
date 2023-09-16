@@ -1,0 +1,48 @@
+#config_version=5
+
+# Notes:
+# - Coils are grouped per board, boards are listed in loop order
+
+coils:
+    # Cabinet I/O --------------------------------------------------------
+    # 6 low current drivers (L0-L5)
+    # 1 high current driver (D1)
+    c_start_button_light:
+        number: cabinet_io-2
+        allow_enable: true
+        label: "Start Button Light"
+
+    # 3208 (Lower Third) -------------------------------------------------
+    # 8 high current drivers (0-7)
+    c_trough_eject:
+        number: lower_io-0
+        default_pulse_ms: 10
+    c_auto_launcher:
+        number: lower_io-1
+        default_pulse_ms: 10
+    c_flipper_left_main:
+        number: lower_io-2
+        default_pulse_ms: 10 # TODO - dial this number if coils are too weak, try 5ms increments
+    c_flipper_left_hold:
+        number: lower_io-3
+        allow_enable: true
+    c_flipper_right_main:
+        number: lower_io-4
+        default_pulse_ms: 10 # TODO - dial this number if coils are too weak, try 5ms increments
+    c_flipper_right_hold:
+        number: lower_io-5
+        allow_enable: true
+    # c_left_outlane_kicker:
+    #     number: lower_io-6
+    #     default_pulse_ms: 10
+    # c_right_outlane_kicker:
+    #     number: lower_io-7
+    #     default_pulse_ms: 10
+
+    # 1616 (Middle Third) ------------------------------------------------
+    # 16 high current drivers (0-15)
+    # TODO
+    
+    # 3208 (Upper Third) -------------------------------------------------
+    # 8 high current drivers (0-7)
+    # TODO

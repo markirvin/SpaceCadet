@@ -1,0 +1,58 @@
+#config_version=5
+
+assets:
+  sounds:
+    default:
+      load: preload
+    loops:
+      load: preload
+      track: loops
+    music:
+      load: preload
+      track: music
+    sfx:
+      load: preload
+      track: sfx
+    voice:
+      load: preload
+      track: voice
+
+sound_system:
+  tracks:
+    music:
+      type: standard
+      simultaneous_sounds: 1
+      volume: 0.5
+    voice:
+      type: standard
+      simultaneous_sounds: 1
+      volume: 0.7
+    sfx:
+      type: standard
+      simultaneous_sounds: 8
+      volume: 0.4
+
+sound_player:
+  ball_started:
+    sound_game_start:
+      action: play
+      loops: 0
+  sound_game_start_finished:
+    sound_ball_trough_eject:
+      action: play
+      loops: 0
+
+sounds:
+  sound_game_start:
+    file: game_start.wav
+    volume: 0.25
+    max_queue_time: 0
+    events_when_stopped: sound_game_start_finished
+  sound_ball_trough_eject:
+    file: ball_trough_eject.wav
+    volume: 0.25
+    max_queue_time: 0
+  sound_plunger:
+    file: plunger.wav
+    volume: 0.25
+    max_queue_time: 0

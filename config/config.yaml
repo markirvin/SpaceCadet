@@ -1,0 +1,96 @@
+#config_version=5
+
+config:
+    - coils.yaml
+    - devices.yaml
+    - keyboard.yaml
+#    - leds.yaml
+    - sound.yaml
+    - switches.yaml
+
+displays:
+    dmd:
+        width: 128
+        height: 32
+        default: True
+
+fast:
+    net:
+        port: COM8
+        controller: neuron
+        io_loop:
+            cabinet_io:
+               model: FP-CAB-0001
+               order: 1
+            lower_io:
+                model: FP-I/O-3208
+                order: 2
+            # middle_io:
+            #     model: FP-I/O-1616
+            #     order: 3
+            # upper_io:
+            #     model: FP-I/O-0804
+            #     order: 4
+        baud: 921600
+        debug: false
+        console_log: none
+        file_log: basic
+        watchdog: 1s
+        default_quick_debounce_open: 2ms
+        default_quick_debounce_close: 2ms
+        default_normal_debounce_open: 4ms
+        default_normal_debounce_close: 4ms
+    # exp:
+    #     port: COM9
+    #     boards:
+    #         neuron:
+    #             model: FP-EXP-2000
+    #             breakouts:
+    #                 - port: 1
+    #                   model: FP-PWR-0007
+    #             led_ports:
+    #                 - port: 1
+    #                   leds: 20
+    #                   type: ws2812
+    # lights:
+    #     led1:
+    #         number: neuron-1-1
+
+game:
+    balls_per_game: 3
+    max_players: 4
+
+hardware:
+    #platform: fast
+    platform: smart_virtual
+
+modes:
+    - attract
+    - base
+#    - skillshot
+
+playfields:
+    playfield:
+        tags: default
+        default_source_device: bd_plunger
+
+slide_player:
+    init_done: init_slide
+    ball_started:
+        widgets:
+            type: text
+            text: PLAYER (number) BALL (ball)
+
+slides:
+    init_slide:
+        widgets:
+            - type: text
+              text: Loading...
+              font_size: 10
+              color: purple
+
+virtual_platform_start_active_switches:
+    - s_trough1
+    - s_trough2
+    - s_trough3
+    - s_trough4
