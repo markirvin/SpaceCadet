@@ -1,36 +1,44 @@
-#config_version=5
+#config_version=6
 
 config:
     - coils.yaml
     - devices.yaml
     - keyboard.yaml
 #    - leds.yaml
-    - sound.yaml
+    - sounds.yaml
     - switches.yaml
 
 displays:
+    # window:
+    #     width: 600
+    #     height: 200
     dmd:
         width: 128
         height: 32
         default: True
 
+# window:
+#     width: 600
+#     height: 200
+#     title: Mission Pinball Framework
+
 fast:
     net:
-        port: COM8
         controller: neuron
+        port: COM8
         io_loop:
             cabinet_io:
-               model: FP-CAB-0001
+               model: FP-I/O-0024
                order: 1
             lower_io:
                 model: FP-I/O-3208
                 order: 2
-            # middle_io:
-            #     model: FP-I/O-1616
-            #     order: 3
-            # upper_io:
-            #     model: FP-I/O-0804
-            #     order: 4
+            middle_io:
+                model: FP-I/O-1616
+                order: 3
+            upper_io:
+                model: FP-I/O-3208
+                order: 4
         baud: 921600
         debug: false
         console_log: none
@@ -61,13 +69,13 @@ game:
     max_players: 4
 
 hardware:
-    #platform: fast
-    platform: smart_virtual
+    platform: fast
+    #platform: smart_virtual
 
 modes:
     - attract
     - base
-#    - skillshot
+    - skillshot
 
 playfields:
     playfield:
@@ -76,10 +84,10 @@ playfields:
 
 slide_player:
     init_done: init_slide
-    ball_started:
-        widgets:
-            type: text
-            text: PLAYER (number) BALL (ball)
+    # ball_started:
+    #     widgets:
+    #         type: text
+    #         text: PLAYER (number) BALL (ball)
 
 slides:
     init_slide:

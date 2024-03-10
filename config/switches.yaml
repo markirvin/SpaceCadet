@@ -1,28 +1,50 @@
-#config_version=5
+#config_version=6
 
 # Notes:
 # - Switches are grouped per board, boards are listed in loop order
 # - Add playfield_active tags for playfield switches that the ball can hit
+# - With Neuron, switches for coils do not need to exist on the same board
 
 switches:
     # Cabinet I/O --------------------------------------------------------
     # 24 switches (0-23)
+    # cabinet_io-0 Unused
+    # cabinet_io-1 Unused
+    # cabinet_io-2 Unused
+    # cabinet_io-3 Unused
+    # cabinet_io-4 Unused
+    # cabinet_io-5 Unused
+    # cabinet_io-6 Unused
+    # cabinet_io-7 Unused
     s_start_button:
         number: cabinet_io-8
         tags: start, start_button_switch
-        label: "Start"
-    s_left_flipper_button:
+        label: "Start Button Switch"
+    s_flipper_button_left:
         number: cabinet_io-9
-        tags: flipper_button_left
-        label: "Left Flipper Button"
-    s_right_flipper_button:
-        number: cabinet_io-17
-        tags: flipper_button_right
-        label: "Right Flipper Button"
+        tags: flipper_button_left_switch
+        label: "Left Flipper Button Switch"
     s_tilt:
         number: cabinet_io-10
         tags: tilt_switch
-        label: "Tilt"
+        label: "Tilt Switch"
+    # cabinet_io-11 Unused
+    # cabinet_io-12 Unused
+    # cabinet_io-13 Unused
+    # cabinet_io-14 Unused
+    # cabinet_io-15 Unused
+    # cabinet_io-16 Unused
+    s_flipper_button_right:
+        number: cabinet_io-17
+        tags: flipper_button_right_switch
+        label: "Right Flipper Button Switch"
+    # cabinet_io-18 Unused
+    # cabinet_io-19 Unused
+    # cabinet_io-20 Unused
+    # cabinet_io-21 Unused
+    # cabinet_io-22 Unused
+    # cabinet_io-23 Unused
+    # TODO - add the service buttons
 #    s_service_back:
 #        number: cabinet_io-
 #        tags: service_back_switch
@@ -40,76 +62,181 @@ switches:
 #        tags: service_select_switch
 #        label: "Service Select"
 
-    # 3208 (0-31) Lower Third I/O ----------------------------------------
-    s_trough_jam:
-        number: lower_io-0 
-        type: NC
-        tags: "Trough Jam Opto Switch"
-    s_trough1:
+
+    # Lower Third I/O (3208) ----------------------------------------
+    # 32 switches (0-31)
+    s_outlane_right:
+        number: lower_io-0
+        tags: playfield_active
+    s_inlane_right:
         number: lower_io-1
+        tags: playfield_active
+    s_rebound_lower_right:
+        number: lower_io-2
+        tags: rebound_lower_right_switch
+        label: "Lower Right Rebound Switch"
+    # lower_io-3 Unused
+    # lower_io-4 Unused
+    # lower_io-5 Unused
+    # lower_io-6 Unused
+    # lower_io-7 Unused
+    s_plunger_lane:
+        number: lower_io-8
+        tags: "Plunger Lane Switch"
+    s_trough1:
+        number: lower_io-9
         type: NC
         tags: "Trough 1 Opto Switch"
     s_trough2:
-        number: lower_io-2
+        number: lower_io-10
         tags: "Trough 2 Switch"
     s_trough3:
-        number: lower_io-3
+        number: lower_io-11
         tags: "Trough 3 Switch"
     s_trough4:
-        number: lower_io-4
+        number: lower_io-12
         tags: "Trough 4 Switch"
-    s_plunger_lane:
-        number: lower_io-5
-        tags: "Plunger Lane Switch" 
-    # s_left_outlane:
-    #     number: lower_io-6
-    #     tags: playfield_active
+    s_trough_jam:
+        number: lower_io-13
+        type: NC
+        tags: "Trough Jam Opto Switch"
+    s_flipper_left_eos:
+        number: lower_io-14
+        tags: flipper_left_eos_switch
+        label: "Left Flipper End of Stroke Switch"
+    s_flipper_right_eos:
+        number: lower_io-15
+        tags: flipper_right_eos_switch
+        label: "Right Flipper End of Stroke Switch"
+    s_mission_select_upper:
+        number: lower_io-16
+        tags: playfield_active
+    s_mission_select_middle:
+        number: lower_io-17
+        tags: playfield_active    
+    s_mission_select_lower:
+        number: lower_io-18
+        tags: playfield_active
+    s_outlane_left:
+        number: lower_io-19
+        tags: playfield_active
+    s_inlane_refuel_left:
+        number: lower_io-20
+        tags: playfield_active
+    s_inlane_left:
+        number: lower_io-21
+        tags: playfield_active
+    s_rebound_lower_left:
+      number: lower_io-22
+      tags: rebound_lower_left_switch
+      label: "Lower Left Rebound Switch"
+    # lower_io-23 Unused
+    # lower_io-24 Unused
+    # lower_io-25 Unused
+    # lower_io-26 Unused
+    # lower_io-27 Unused
+    # lower_io-28 Unused
+    # lower_io-29 Unused
+    # lower_io-30 Unused
+    # lower_io-31 Unused
     # s_left_outlane_kickback:
     #     number: lower_io-7
     #     type: NC
-    #     tags: playfield_active
-    # s_left_refuel_inlane:
-    #     number: lower_io-8
-    #     tags: playfield_active
-    # s_left_inlane:
-    #     number: lower_io-9
-    #     tags: playfield_active
-    # s_right_inlane:
-    #     number: lower_io-10
-    #     tags: playfield_active
-    # s_right_outlane:
-    #     number: lower_io-11
     #     tags: playfield_active
     # s_right_outlane_kickback:
     #     number: lower_io-12
     #     type: NC
     #     tags: playfield_active
-    s_left_flipper_eos:
-        number: lower_io-15
-        tags: left_flipper_end_of_stroke
-        label: "Left Flipper End of Stroke"
-    s_right_flipper_eos:
-        number: lower_io-16
-        tags: right_flipper_end_of_stroke
-        label: "Right Flipper End of Stroke"
-    # s_left_slingshot:
-    #     number: lower_io-17
-    #     tags: playfield_active
-    # s_right_slingshot:
-    #     number: lower_io-18
-    #     tags: playfield_active
-    # s_mission_select_1:
-    #     number: lower_io-19
-    #     tags: playfield_active
-    # s_mission_select_2:
-    #     number: lower_io-20
-    #     tags: playfield_active    
-    # s_mission_select_3:
-    #     number: lower_io-21
-    #     tags: playfield_active
+    
 
-    # 1616 (0-16) Middle Playfield ---------------------------------------
-    # TODO - Add switches
+    # Middle Playfield I/O (1616) ---------------------------------------
+    # 16 switches (0-15)
+      # upper_io-0 Unused
+      # upper_io-1 Unused
+      # upper_io-2 Unused
+      # upper_io-3 Unused
+      # upper_io-4 Unused
+      # upper_io-5 Unused
+      # upper_io-6 Unused
+      # upper_io-7 Unused
+      # upper_io-8 Unused
+      # upper_io-9 Unused
+      # upper_io-10 Unused
+      # upper_io-11 Unused
+      # upper_io-12 Unused
+      # upper_io-13 Unused
+      # upper_io-14 Unused
+      # upper_io-15 Unused
 
-    # 3208 (0-31) Upper Playfield ----------------------------------------
-    # TODO - Add switches
+
+    # Upper Playfield I/O (3208) ----------------------------------------
+    # 32 switches (0-31)
+    s_attack_bumper_middle:
+      number: upper_io-0
+      tags: attack_bumper_middle_switch
+      label: "Middle Attack Bumper Switch"
+    s_attack_bumper_right:
+      number: upper_io-1
+      tags: attack_bumper_right_switch
+      label: "Right Attack Bumper Switch"
+    s_attack_bumper_left:
+      number: upper_io-2
+      tags: attack_bumper_left_switch
+      label: "Left Attack Bumper Switch"
+    s_attack_bumper_upper_left:
+      number: upper_io-3
+      tags: attack_bumper_upper_left_switch
+      label: "Upper Left Attack Bumper Switch"
+    s_scoop_red_wormhole:
+      number: upper_io-4
+      type: NC
+      tags: scoop_red_wormhole_switch
+      label: "Red Wormhole Scoop Switch"
+    # upper_io-5 Unused
+    # upper_io-6 Unused
+    # upper_io-7 Unused
+    s_re-entry_lane_left:
+      number: upper_io-8
+      tags: re-entry_lane_left
+      label: "Left Re-Entry Lane"
+    s_re-entry_lane_middle:
+      number: upper_io-9
+      tags: re-entry_lane_middle
+      label: "Middle Re-Entry Lane"
+    s_re-entry_lane_right:
+      number: upper_io-10
+      tags: re-entry_lane_right
+      label: "Right Re-Entry Lane"
+    # upper_io-11 Unused
+    # upper_io-12 Unused
+    # upper_io-13 Unused
+    # upper_io-14 Unused
+    # upper_io-15 Unused
+    s_drop_target_medal_1:
+        number: upper_io-16
+        type: NC
+    s_drop_target_medal_2:
+        number: upper_io-17
+        type: NC
+    s_drop_target_medal_3:
+        number: upper_io-18
+        type: NC
+    s_drop_target_multiplier_1:
+        number: upper_io-19
+        type: NC
+    s_drop_target_multiplier_2:
+        number: upper_io-20
+        type: NC
+    s_drop_target_multiplier_3:
+        number: upper_io-21
+        type: NC
+    # upper_io-22 Unused
+    # upper_io-23 Unused
+    # upper_io-24 Unused
+    # upper_io-25 Unused
+    # upper_io-26 Unused
+    # upper_io-27 Unused
+    # upper_io-28 Unused
+    # upper_io-29 Unused
+    # upper_io-30 Unused
+    # upper_io-31 Unused

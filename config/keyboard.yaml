@@ -1,4 +1,4 @@
-#config_version=5
+#config_version=6
 
 # Note - Non-standard characters need to be in quotes
 keyboard:
@@ -22,6 +22,6 @@ keyboard:
   t:
     switch: s_tilt
   z:
-    switch: s_left_flipper_button
+    switch: s_flipper_button_left
   /:
-    switch: s_right_flipper_button
+    switch: s_flipper_button_right

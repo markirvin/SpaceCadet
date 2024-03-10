@@ -1,7 +1,28 @@
-##! mode: skillshot
-#config_version=5
+#config_version=6
 
-# TODO
+# The skill shot consists of lighting the deployment lights
+# that run the length of the plunger lane.  There are 6
+# lights, when a light is passed it is lit and a deployment
+# light sound is played.  The score is dependant on the highest
+# light lit during the plung.  The skillshot ends when the ball
+# falls back to the one-way gate at the first deployment light
+# and enters the playfield or making it to one of the re-entry
+# lanes.  The score is awarded when the mode ends.
+#
+# Light   Points
+# 6       15,000
+# 5       30,000
+# 4       75,000
+# 3       30,000
+# 2       15,000
+# 1       7,500
+
 mode:
-  start_events: ball_starting
+  start_events: ball_starting, s_plunger_lane_active
   priority: 500
+
+sound_player:
+  s_plunger_lane_inactive:
+    sound_plunger:
+      action: play
+      loops: 0

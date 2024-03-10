@@ -1,4 +1,4 @@
-#config_version=5
+#config_version=6
 
 # light numbering: <board_name>-<port>-<led>
 # 32 LEDs MAX per expansion board port

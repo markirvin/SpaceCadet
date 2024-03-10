@@ -1,4 +1,4 @@
-#config_version=5
+#config_version=6
 
 mode:
   start_events: ball_started
@@ -29,12 +29,13 @@ slide_player:
 
 # Swith hit, MPF posts <switch_name>_active event
 # Switch released, MPF posts <switch_name>_inactive event
+# Some temporary scores for testing
 variable_player:
-  s_left_flipper_active:
+  s_flipper_button_left_active:
     score: 100
-  s_right_flipper_active:
+  s_flipper_button_right_active:
     score: 1000
-  s_left_slingshot_active:
+  s_rebound_lower_left_active:
     score: 500
-  s_right_slingshot_active:
+  s_rebound_lower_right_active:
     score: 500 
