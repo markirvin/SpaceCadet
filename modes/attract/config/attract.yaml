@@ -1,26 +1,7 @@
 #config_version=6
 
 slide_player:
-    mode_attract_started: attract_slide_1
-
-slides:
-    # Slide 1: show the game title with flashing "Press Start" text below title
-    attract_slide_1:
-        widgets:
-            - type: text
-              text: Space Cadet
-              font_size: 20
-            - type: text
-              text: Press Start
-              font_size: 8
-              y: 10%
-              animations:
-                show_slide:
-                  - property: opacity
-                    value: 0
-                  - property: opacity
-                    value: 1
-                    repeat: true
+  mode_attract_started: attract_slide_main
 
 show_player:
   mode_attract_started:

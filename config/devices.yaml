@@ -1,102 +1,102 @@
 #config_version=6
 
 autofire_coils:
-    rebound_lower_left:
-        coil: c_rebound_lower_left
-        switch: s_rebound_lower_left
-    rebound_lower_right:
-        coil: c_rebound_lower_right
-        switch: s_rebound_lower_right
-    # rebound_upper_left:
-    #     coil: 
-    #     switch:
-    # rebound_upper_right:
-    #     coil:
-    #     switch:
-    attack_bumper_middle:
-        coil: c_attack_bumper_middle
-        switch: s_attack_bumper_middle
-    attack_bumper_right:
-        coil: c_attack_bumper_right
-        switch: s_attack_bumper_right
-    attack_bumper_left:
-        coil: c_attack_bumper_left
-        switch: s_attack_bumper_left
-    attack_bumper_upper_left:
-        coil: c_attack_bumper_upper_left
-        switch: s_attack_bumper_upper_left
-    # launch_bumper_1:
-    #     coil:
-    #     switch:
-    # launch_bumper_2:
-    #     coil:
-    #     switch:
-    # launch_bumper_3:
-    #     coil:
-    #     switch:
+  rebound_lower_left:
+    coil: c_rebound_lower_left
+    switch: s_rebound_lower_left
+  rebound_lower_right:
+    coil: c_rebound_lower_right
+    switch: s_rebound_lower_right
+  # rebound_upper_left:
+  #   coil:
+  #   switch:
+  # rebound_upper_right:
+  #   coil:
+  #   switch:
+  attack_bumper_middle:
+    coil: c_attack_bumper_middle
+    switch: s_attack_bumper_middle
+  attack_bumper_right:
+    coil: c_attack_bumper_right
+    switch: s_attack_bumper_right
+  attack_bumper_left:
+    coil: c_attack_bumper_left
+    switch: s_attack_bumper_left
+  attack_bumper_upper_left:
+    coil: c_attack_bumper_upper_left
+    switch: s_attack_bumper_upper_left
+  # launch_bumper_1:
+  #   coil:
+  #   switch:
+  # launch_bumper_2:
+  #   coil:
+  #   switch:
+  # launch_bumper_3:
+  #   coil:
+  #   switch:
 
 
 drop_targets:
-    d_drop_medal_1:
-        switch: s_drop_target_medal_1
-    d_drop_medal_2:
-        switch: s_drop_target_medal_2
-    d_drop_medal_3:
-        switch: s_drop_target_medal_3
-    d_drop_multiplier_1:
-        switch: s_drop_target_multiplier_1
-    d_drop_multiplier_2:
-        switch: s_drop_target_multiplier_2
-    d_drop_multiplier_3:
-        switch: s_drop_target_multiplier_3
+  d_drop_medal_1:
+    switch: s_drop_target_medal_1
+  d_drop_medal_2:
+    switch: s_drop_target_medal_2
+  d_drop_medal_3:
+    switch: s_drop_target_medal_3
+  d_drop_multiplier_1:
+    switch: s_drop_target_multiplier_1
+  d_drop_multiplier_2:
+    switch: s_drop_target_multiplier_2
+  d_drop_multiplier_3:
+    switch: s_drop_target_multiplier_3
 
 drop_target_banks:
-    drop_bank_medal:
-        drop_targets: d_drop_medal_1, d_drop_medal_2, d_drop_medal_3
-        reset_coil: c_drop_targets_medal
-        reset_on_complete: 1s
-    drop_bank_multiplier:
-        drop_targets: d_drop_multiplier_1, d_drop_multiplier_2, d_drop_multiplier_3
-        reset_coil: c_drop_targets_multiplier
-        reset_on_complete: 1s
+  drop_bank_medal:
+    drop_targets: d_drop_medal_1, d_drop_medal_2, d_drop_medal_3
+    reset_coil: c_drop_targets_medal
+    reset_on_complete: 1s
+  drop_bank_multiplier:
+    drop_targets: d_drop_multiplier_1, d_drop_multiplier_2, d_drop_multiplier_3
+    reset_coil: c_drop_targets_multiplier
+    reset_on_complete: 1s
 
 
-# TODO - flippers were being disabled shortly after game start and the first couple presses,
+# TODO - Flippers were being disabled shortly after game start and the first couple presses,
 #        eos entries were causing the error, investigate.
 flippers:
-    left_flipper:
-        main_coil: c_flipper_left_main
-        hold_coil: c_flipper_left_hold
-        activation_switch: s_flipper_button_left
-        # eos_switch: s_flipper_left_eos
-        # use_eos: true
-        # repulse_on_eos_open: true
-        # eos_active_ms_before_repulse: 500
-    right_flipper:
-        main_coil: c_flipper_right_main
-        hold_coil: c_flipper_right_hold
-        activation_switch: s_flipper_button_right
-        # eos_switch: s_flipper_right_eos
-        # use_eos: true
-        # repulse_on_eos_open: true
-        # eos_active_ms_before_repulse: 500
+  left_flipper:
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_flipper_button_left
+    # eos_switch: s_flipper_left_eos
+    # use_eos: true
+    # respulse_on_eos_open: true
+    # eos_active_ms_before_repulse: 500
+  right_flipper:
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_flipper_button_right
+    # eos_switch: s_flipper_right_eos
+    # use_eos: true
+    # respulse_on_eos_open: true
+    # eos_active_ms_before_repulse: 500
 
 
 ball_devices:
-    bd_trough:
-        ball_switches: s_trough1, s_trough2, s_trough3, s_trough4, s_trough_jam
-        eject_coil: c_trough_eject
-        tags: trough, home, drain
-        jam_switch: s_trough_jam
-        eject_coil_jam_pulse: 15ms
-        eject_targets: bd_plunger
-        eject_timeouts: 3s
-        #player_controlled_eject_event: sound_eject_finished
-    bd_plunger:
-        ball_switches: s_plunger_lane
-        mechanical_eject: true
-        eject_timeouts: 5s
-    bd_scoop_red_wormhole:
-        ball_switches: s_scoop_red_wormhole
-        eject_coil: c_scoop_red_wormhole
-        eject_timeouts: 2s
+  bd_trough:
+    ball_switches: s_trough1, s_trough2, s_trough3, s_trough4, s_trough_jam
+    eject_coil: c_trough_eject
+    tags: trough, home, drain
+    jam_switch: s_trough_jam
+    eject_coil_jam_pulse: 15ms
+    eject_targets: bd_plunger
+    eject_timeouts: 3s
+    #player_controlled_eject_event: sound_eject_finished
+  bd_plunger:
+    ball_switches: s_plunger_lane
+    mechanical_eject: true
+    eject_timeouts: 5s
+  bd_scoop_red_wormhole:
+    ball_switches: s_scoop_red_wormhole
+    eject_coil: c_scoop_red_wormhole
+    eject_timeouts: 2s

@@ -1,14 +1,23 @@
+# Godot 4+ specific ignores
+.godot/
+
 # Audio files
 *.wav
 
-# MPF logs
-*.log
+# MPF files
+/logs
+/data
+/Lib
 
 # VS Code files
 /.vscode
 
-# Ignore Monitor, for now
-/Monitor
+# Python Virtual Environment Items
+/Scripts
+pyvenv.cfg
 
-# Ignore data folder, for now
-/data 
+# My MPF/GODOT Notes
+Notes.txt
+
+# GODOT, ignore the GMC files for now
+/addons

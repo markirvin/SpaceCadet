@@ -4,48 +4,48 @@ mode:
   start_events: ball_started
   priority: 100
 
-slide_player:
-  mode_base_started:
-    widgets:
-      - type: text
-        text: (score)
-        number_grouping: true
-        min_digits: 2
-        font_size: 20
-      - type: text
-        text: PLAYER (number)
-        y: 5
-        x: 10
-        font_size: 5
-        anchor_x: left
-        anchor_y: bottom
-      - type: text
-        text: BALL (ball)
-        y: 5
-        x: right-10
-        anchor_x: right
-        anchor_y: bottom
-        font_size: 5
+# slide_player:
+#   mode_base_started:
+#     widgets:
+#       - type: text
+#         text: (score)
+#         number_grouping: true
+#         min_digits: 2
+#         font_size: 20
+#       - type: text
+#         text: PLAYER (number)
+#         y: 5
+#         x: 10
+#         font_size: 5
+#         anchor_x: left
+#         anchor_y: bottom
+#       - type: text
+#         text: BALL (ball)
+#         y: 5
+#         x: right-10
+#         anchor_x: right
+#         anchor_y: bottom
+#         font_size: 5
 
 sound_player:
   ball_drain:
-    sound_ball_end:
+    ball_end:
       action: play
       loops: 0
   s_re-entry_lane_left_active:
-    sound_rollover_switch:
+    rollover_switch:
       action: play
       loops: 0
   s_re-entry_lane_middle_active:
-    sound_rollover_switch:
+    rollover_switch:
       action: play
       loops: 0
   s_re-entry_lane_right_active:
-    sound_rollover_switch:
+    rollover_switch:
       action: play
       loops: 0
 
-# Swith hit, MPF posts <switch_name>_active event
+# Switch hit, MPF posts <switch_name>_active event
 # Switch released, MPF posts <switch_name>_inactive event
 # Some temporary scores for testing
 variable_player:
@@ -56,4 +56,5 @@ variable_player:
   s_rebound_lower_left_active:
     score: 500
   s_rebound_lower_right_active:
-    score: 500 
+    score: 500
+    

@@ -6,71 +6,76 @@ assets:
       load: preload
     loops:
       load: preload
-      track: loops
+      #bus: loops
     music:
       load: preload
-      track: music
-    sfx:
+      bus: music
+    effects:
       load: preload
-      track: sfx
+      bus: effects
     voice:
       load: preload
-      track: voice
+      bus: voice
 
-sound_system:
-  tracks:
-    music:
-      type: standard
-      simultaneous_sounds: 1
-      volume: 0.5
-    voice:
-      type: standard
-      simultaneous_sounds: 1
-      volume: 0.7
-    sfx:
-      type: standard
-      simultaneous_sounds: 8
-      volume: 0.4
+# Deprecated
+# sound_system:
+#   tracks:
+#     music:
+#       type: standard
+#       simultaneous_sounds: 1
+#       volume: 0.5
+#     voice:
+#       type: standard
+#       simultaneous_sounds: 1
+#       volume: 0.7
+#     effects:
+#       type: standard
+#       simultaneous_sounds: 8
+#       volume: 0.4
 
-sounds:
-  sound_ball_end:
-    file: ball_end.wav
-    volume: 0.25
-    max_queue_time: 0
-    events_when_stopped: sound_ball_end_finished
-  sound_ball_trough_eject:
-    file: ball_trough_eject.wav
-    volume: 0.25
-    max_queue_time: 0
-    events_when_stopped: sound_eject_finished
-  sound_game_end:
-    file: game_end.wav
-    volume: 0.25
-    max_queue_time: 0
-  sound_game_start:
-    file: game_start.wav
-    volume: 0.25
-    max_queue_time: 0
-    events_when_stopped: sound_game_start_finished
-  sound_plunger:
-    file: plunger.wav
-    volume: 0.25
-    max_queue_time: 0
-  sound_rollover_switch:
-    file: rollover_switch.wav
-    volume: 0.25
-    max_queue_time: 0
+# Deprecated
+# sounds:
+#   sound_ball_end:
+#     file: ball_end.wav
+#     volume: 0.25
+#     max_queue_time: 0
+#     events_when_stopped: sound_ball_end_finished
+#   sound_ball_trough_eject:
+#     file: ball_trough_eject.wav
+#     volume: 0.25
+#     max_queue_time: 0
+#     events_when_stopped: sound_eject_finished
+#   sound_game_end:
+#     file: game_end.wav
+#     volume: 0.25
+#     max_queue_time: 0
+#   sound_game_start:
+#     file: game_start.wav
+#     volume: 0.25
+#     max_queue_time: 0
+#     events_when_stopped: sound_game_start_finished
+#   sound_plunger:
+#     file: plunger.wav
+#     volume: 0.25
+#     max_queue_time: 0
+#   sound_rollover_switch:
+#     file: rollover_switch.wav
+#     volume: 0.25
+#     max_queue_time: 0
+
+# sound_player:
+#   game_started: game_start
 
 sound_player:
   game_started:
-    sound_game_start:
+    game_start:
       action: play
       loops: 0
   mode_game_stopped:
-    sound_game_end:
+    game_end:
       action: play
       loops: 0
   sound_game_start_finished:
-    sound_ball_trough_eject:
+    ball_trough_eject:
       action: play
       loops: 0
