@@ -27,6 +27,24 @@ slide_player:
         anchor_y: bottom
         font_size: 5
 
+sound_player:
+  ball_drain:
+    sound_ball_end:
+      action: play
+      loops: 0
+  s_re-entry_lane_left_active:
+    sound_rollover_switch:
+      action: play
+      loops: 0
+  s_re-entry_lane_middle_active:
+    sound_rollover_switch:
+      action: play
+      loops: 0
+  s_re-entry_lane_right_active:
+    sound_rollover_switch:
+      action: play
+      loops: 0
+
 # Swith hit, MPF posts <switch_name>_active event
 # Switch released, MPF posts <switch_name>_inactive event
 # Some temporary scores for testing

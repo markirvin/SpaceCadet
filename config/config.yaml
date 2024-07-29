@@ -28,8 +28,8 @@ fast:
         port: COM8
         io_loop:
             cabinet_io:
-               model: FP-I/O-0024
-               order: 1
+                model: FP-I/O-0024
+                order: 1
             lower_io:
                 model: FP-I/O-3208
                 order: 2
@@ -69,8 +69,8 @@ game:
     max_players: 4
 
 hardware:
-    platform: fast
-    #platform: smart_virtual
+    #platform: fast
+    platform: smart_virtual
 
 modes:
     - attract
@@ -84,7 +84,7 @@ playfields:
 
 slide_player:
     init_done: init_slide
-    # ball_started:
+    ball_started: running_slide
     #     widgets:
     #         type: text
     #         text: PLAYER (number) BALL (ball)
@@ -96,6 +96,13 @@ slides:
               text: Loading...
               font_size: 10
               color: purple
+    # blank slide, Loading... will show between balls if we don't use a different slide
+    running_slide:
+        widgets:
+            - type: text
+              text: blah
+              font_size: 10
+              color: black
 
 virtual_platform_start_active_switches:
     - s_trough1

@@ -56,6 +56,10 @@ sounds:
     file: plunger.wav
     volume: 0.25
     max_queue_time: 0
+  sound_rollover_switch:
+    file: rollover_switch.wav
+    volume: 0.25
+    max_queue_time: 0
 
 sound_player:
   game_started:
@@ -68,9 +72,5 @@ sound_player:
       loops: 0
   sound_game_start_finished:
     sound_ball_trough_eject:
-      action: play
-      loops: 0
-  ball_drain:
-    sound_ball_end:
       action: play
       loops: 0

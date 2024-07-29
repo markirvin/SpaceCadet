@@ -14,6 +14,12 @@ keyboard:
   4:
     switch: s_trough4
     toggle: true
+  7:
+    switch: s_re-entry_lane_left
+  8:
+    switch: s_re-entry_lane_middle
+  9:
+    switch: s_re-entry_lane_right
   p:
     switch: s_plunger_lane
     toggle: true

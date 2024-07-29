@@ -15,10 +15,11 @@
 # 4       75,000
 # 3       30,000
 # 2       15,000
-# 1       7,500
+# 1        7,500
 
 mode:
   start_events: ball_starting, s_plunger_lane_active
+  stop_events: s_re-entry_lane_left_active, s_re-entry_lane_middle_active, s_re-entry_lane_right_active
   priority: 500
 
 sound_player:
