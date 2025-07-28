@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp5sf45mqktk0"]
+
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_f8apc"]
+[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="2_2cahv"]
+
+[node name="BaseSlide" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 1024.0
+script = ExtResource("1_f8apc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="player_score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.714271, 0.000389282, 0.714266, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 25
+theme_override_font_sizes/font_size = 120
+text = "1,234,567"
+horizontal_alignment = 1
+script = ExtResource("2_2cahv")
+variable_name = "score"
+comma_separate = true
+min_digits = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -210.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 30
+
+[node name="player_number" type="Label" parent="MarginContainer/HFlowContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.713726, 0, 0.713726, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "Player 1"
+script = ExtResource("2_2cahv")
+variable_name = "number"
+template_string = "Player %s"
+min_players = 2
+
+[node name="player_ball" type="Label" parent="MarginContainer/HFlowContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.713726, 0, 0.713726, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+text = "Ball 1"
+script = ExtResource("2_2cahv")
+variable_name = "ball"
+template_string = "Ball %s"

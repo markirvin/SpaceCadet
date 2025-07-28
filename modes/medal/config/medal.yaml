@@ -1,0 +1,37 @@
+#config_version=6
+
+# The bank of medal targets is made up of drop targets. When you drop a medal target,
+# you earn points. When you drop all three medal targets, the blue medal light is
+# turned on. This process repeats itself for each time all three medal targets are
+# dropped until the medal light is turned on. If either the blue or red medal light
+# is turned on when you drop the medal target, you earn extra points. If the purple
+# medal light is turned on when you drop a medal target, you are awarded an extra ball.
+#
+# Drop    Light
+# ---------------
+# 1       Blue
+# 2       Red
+# 3       Purple
+
+mode:
+  start_events: ball_starting
+  stop_events: ball_ended
+  priority: 100
+
+sound_player:
+  drop_target_bank_drop_bank_medal_up:
+    drop_bank_reset:
+      action: play
+      loops: 0
+  drop_target_d_drop_medal_1_down:
+    drop_target_drop:
+      action: play
+      loops: 0
+  drop_target_d_drop_medal_2_down:
+    drop_target_drop:
+      action: play
+      loops: 0
+  drop_target_d_drop_medal_3_down:
+    drop_target_drop:
+      action: play
+      loops: 0

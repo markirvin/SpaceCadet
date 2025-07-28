@@ -1,0 +1,61 @@
+#config_version=6
+
+# Attack bumpers can be upgraded if all re-entry lane lights are
+# lit.  The upgraded state will last for 60 seconds before degrading
+# back to the previous level.  Attack bumper hit points are increased
+# for each higher level.
+
+# Level   Color     Points
+# ------------------------
+# 1       Blue      500
+# 2       Green     1000
+# 3       Yellow    2000
+# 4       Red       4000
+# ------------------------
+
+mode:
+  start_events: start_mode_attack_bumper_upgrade
+  stop_events: stop_mode_attack_bumper_upgrade
+  priority: 200
+
+
+# shots:
+#   left_re-entry_lane:
+#     switch: s_re-entry_lane_left
+#     profile: re-entry_lane_profile
+#     show_tokens:
+#       led: TBD
+#   middle_re-entry_lane:
+#     switch: s_re-entry_lane_middle
+#     profile: re-entry_lane_profile
+#     show_tokens:
+#       led: TBD
+#   right_re-entry_lane:
+#     switch: s_re-entry_lane_right
+#     profile: re-entry_lane_profile
+#     show_tokens:
+#       led: TBD
+
+# timers:
+#   attack_bumper_upgrade_timer:
+#     start_value: 60
+#     end_value: 0
+#     direction: down
+#     control_events:
+#       - action: start
+#         event: TBD
+#       - action: stop
+#         event: TBD
+
+# Switch hit, MPF posts <switch_name>_active event
+# Switch released, MPF posts <switch_name>_inactive event
+# Some temporary scores for testing
+variable_player:
+  s_attack_bumper_middle_active:
+    score: 500
+  s_attack_bumper_right_active:
+    score: 500
+  s_attack_bumper_left_active:
+    score: 500
+  s_attack_bumper_upper_left_active:
+    score: 500
