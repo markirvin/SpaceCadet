@@ -39,6 +39,16 @@ fast:
     default_quick_debounce_close: 2ms
     default_normal_debounce_open: 4ms
     default_normal_debounce_close: 4ms
+  exp:
+    boards:
+      neuron:
+        model: FP-EXP-2000
+      playfield:
+        model: FP-EXP-0071
+        led_fade_time: 0
+    port: auto
+    baud: 921600
+    debug: false
   # exp:
   #   port: COM9
   #   boards:
@@ -64,36 +74,21 @@ hardware:
   platform: smart_virtual
 
 modes:
+  - attack_bumper_upgrade
   - attract
   - base
+  - medal
   - skillshot
+
+player_vars:
+  multiplier:
+    value_type: int
+    initial_value: 1
 
 playfields:
   playfield:
     tags: default
     default_source_device: bd_plunger
-
-# slide_player:
-#   init_done: init_slide
-#   ball_started: running_slide
-#     widgets:
-#       type: text
-#       text: PLAYER (number) BALL (ball)
-
-# slides:
-#   init_slide:
-#     widgets:
-#       - type: text
-#         text: Loading...
-#         font_size: 10
-#         color: purple
-#   # blank slide, Loading... will show between balls if we don't use a different slide
-#   running_slide:
-#     widgets:
-#       - type: text
-#         text: blah
-#         font_size: 10
-#         color: black
 
 virtual_platform_start_active_switches:
   - s_trough1

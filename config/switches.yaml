@@ -3,6 +3,8 @@
 # Notes:
 # - Switches are grouped per board, boards are listed in loop order
 # - Add playfield_active tags for playfield switches that the ball can hit
+#   - Update: It is recommended to NOT use playfield_active tags now as the
+#             playfield devices (shot, drop target, bumper, etc.) handle them 
 # - With Neuron, switches for coils do not need to exist on the same board
 
 switches:
@@ -67,10 +69,10 @@ switches:
   # 32 switches (0-31)
   s_outlane_right:
     number: lower_io-0
-    tags: playfield_active
+    tags: right_outlane_switch
   s_inlane_right:
     number: lower_io-1
-    tags: playfield_active
+    tags: right_inlane_switch
   s_rebound_lower_right:
     number: lower_io-2
     tags: rebound_lower_right_switch
@@ -116,22 +118,22 @@ switches:
     label: "Right Flipper End of Stroke Switch"
   s_mission_select_upper:
     number: lower_io-16
-    tags: playfield_active
+    tags: upper_mission_select_switch
   s_mission_select_middle:
     number: lower_io-17
-    tags: playfield_active
+    tags: middle_mission_select_switch
   s_mission_select_lower:
     number: lower_io-18
-    tags: playfield_active
+    tags: lower_mission_select_switch
   s_outlane_left:
     number: lower_io-19
-    tags: playfield_active
+    tags: left_outlane_switch
   s_inlane_refuel_left:
     number: lower_io-20
-    tags: playfield_active
+    tags: left_refuel_inlane_switch
   s_inlane_left:
     number: lower_io-21
-    tags: playfield_active
+    tags: left_inlane_switch
   s_rebound_lower_left:
     number: lower_io-22
     tags: rebound_lower_left_switch
@@ -148,11 +150,9 @@ switches:
   # s_left_outlane_kickback:
   #   number: lower__io-
   #   type: NC
-  #   tags: playfield_active
   # s_right_outlane_kickback:
   #   number: lower_io-
   #   type: NC
-  #   tags: playfield_active
 
 
   # Middle Playfield I/O (1616) ------------------------------------------
