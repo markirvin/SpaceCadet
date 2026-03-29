@@ -2,6 +2,8 @@
 
 # Notes:
 # - Coils are grouped per board, boards are listed in loop order
+# - Logging on the start button light driver has been disabled because
+#   its too chatty in attract mode
 
 coils:
   # Cabinet I/O ----------------------------------------------------------
@@ -13,6 +15,8 @@ coils:
     number: cabinet_io-2
     allow_enable: true
     label: "Start Button Light"
+    file_log: none
+    console_log: none
   # cabinet_io-3 Unused
   # cabinet_io-4 Unused
   # cabinet_io-5 Unused
@@ -20,15 +24,16 @@ coils:
 
   # 3208 (Lower Third) ---------------------------------------------------
   # 8 high current driver (0-7)
+  # Raise coil pulse duration in 5ms increments if more power is needed
   c_flipper_left_main:
     number: lower_io-0
-    default_pulse_ms: 10 # TODO - dial this number if coils are too weak, try 5ms increments
+    default_pulse_ms: 15
   c_flipper_left_hold:
     number: lower_io-1
     allow_enable: true
   c_flipper_right_main:
     number: lower_io-2
-    default_pulse_ms: 10 # TODO - dial this number if coils are too weak, try 5ms increments
+    default_pulse_ms: 15
   c_flipper_right_hold:
     number: lower_io-3
     allow_enable: true
@@ -41,7 +46,7 @@ coils:
     default_hold_power: 0.1
   c_trough_eject:
     number: lower_io-5
-    default_pulse_ms: 10
+    default_pulse_ms: 15
   c_outlane_kicker_left:
     number: lower_io-6
     default_pulse_ms: 10
@@ -63,7 +68,7 @@ coils:
     default_pulse_ms: 5
   c_drop_targets_medal:
     number: middle_io-3
-    default_pulse_ms: 20
+    default_pulse_ms: 25
   c_drop_targets_multiplier:
     number: middle_io-4
     default_pulse_ms: 25
