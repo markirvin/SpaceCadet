@@ -71,11 +71,12 @@ sound_player:
     game_start:
       action: play
       loops: 0
+      events_when_stopped: mode_game_start_sound_ended
   mode_game_stopped:
     game_end:
       action: play
       loops: 0
-  sound_game_start_finished:
-    ball_trough_eject:
-      action: play
-      loops: 0
+  # sound_game_start_finished:
+  #   ball_trough_eject:
+  #     action: play
+  #     loops: 0
