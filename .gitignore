@@ -1,23 +1,13 @@
 # Godot 4+ specific ignores
 .godot/
+.editorconfig
+/android/
+addons/
 
 # Audio files
-*.wav
+sounds/
 
 # MPF files
-/logs
-/data
-/Lib
-
-# VS Code files
-/.vscode
-
-# Python Virtual Environment Items
-/Scripts
-pyvenv.cfg
-
-# My MPF/GODOT Notes
-Notes.txt
-
-# GODOT, ignore the GMC files for now
-/addons
+logs/
+data/
+monitor/
