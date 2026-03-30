@@ -1,0 +1,17 @@
+#show_version=6
+
+- duration: 1
+  lights:
+    l_left_re-entry: blue
+    l_middle_re-entry: 0
+    l_right_re-entry: 0
+- duration: 1
+  lights:
+    l_left_re-entry: 0
+    l_middle_re-entry: red
+    l_right_re-entry: 0
+- duration: 1
+  lights:
+    l_left_re-entry: 0
+    l_middle_re-entry: 0
+    l_right_re-entry: yellow

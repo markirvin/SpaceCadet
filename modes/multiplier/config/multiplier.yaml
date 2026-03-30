@@ -1,0 +1,46 @@
+#config_version=6
+
+# From the Space Cadet 3D Pinball digital manual:
+#
+# Field Multiplier Targets
+#
+# The bank of field multiplier targets is made up of drop targets.
+# When you drop a field multiplier target, you receive points. When
+# you drop all three targets, the first field multiplier light is 
+# turned on, and you receive bonus points. The process repeats itself
+# for each time you drop all three field multiplier targets until all
+# four field multiplier lights are turned on. Each time a field
+# multiplier light is turned on, all points scored on the table are
+# multiplied as follows:
+#
+# Light   Multiplier
+# 1       2x
+# 2       3x
+# 3       5x
+# 4       10x
+#
+# The most recently activated field multiplier light is deactivated
+# after 60 seconds.
+
+mode:
+  start_events: ball_starting
+  stop_events: ball_ended
+  priority: 100
+
+sound_player:
+  drop_target_bank_drop_bank_multiplier_up:
+    drop_bank_reset:
+      action: play
+      loops: 0
+  drop_target_d_drop_multiplier_1_down:
+    drop_target_drop:
+      action: play
+      loops: 0
+  drop_target_d_drop_multiplier_2_down:
+    drop_target_drop:
+      action: play
+      loops: 0
+  drop_target_d_drop_multiplier_3_down:
+    drop_target_drop:
+      action: play
+      loops: 0
