@@ -1,8 +1,17 @@
 #config_version=6
 
 mode:
-  start_events: ball_started
+  start_events: ball_will_start
+#  start_events: mode_game_started_sound_ended
   priority: 100
+
+queue_relay_player:
+  ball_starting:
+    post: start_ball_eject_sound
+    wait_for: mode_ball_eject_sound_ended
+  ball_ending:
+    post: start_ball_drain_sound
+    wait_for: mode_ball_drain_sound_ended
 
 event_player:
   mode_base_started:
@@ -14,10 +23,16 @@ slide_player:
   mode_base_started: base_slide
 
 sound_player:
-  ball_drain:
+  start_ball_eject_sound:
+    ball_trough_eject:
+      action: play
+      loops: 0
+      events_when_stopped: mode_ball_eject_sound_ended
+  start_ball_drain_sound:
     ball_end:
       action: play
       loops: 0
+      events_when_stopped: mode_ball_drain_sound_ended 
   s_re-entry_lane_left_active:
     rollover_switch:
       action: play
@@ -30,6 +45,27 @@ sound_player:
     rollover_switch:
       action: play
       loops: 0
+  s_outlane_right_active:
+    rollover_switch:
+      action: play
+      loops: 0
+  s_inlane_right_active:
+    rollover_switch:
+      action: play
+      loops: 0
+  s_outlane_left_active:
+    rollover_switch:
+      action: play
+      loops: 0
+  s_inlane_refuel_left_active:
+    refuel_rollover_switch:
+      action: play
+      loops: 0
+  s_inlane_left_active:
+    rollover_switch:
+      action: play
+      loops: 0
+
 
 # Switch hit, MPF posts <switch_name>_active event
 # Switch released, MPF posts <switch_name>_inactive event
