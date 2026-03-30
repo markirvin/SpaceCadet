@@ -3,20 +3,22 @@
 config:
   - coils.yaml
   - devices.yaml
-  #- leds.yaml
+  - lights.yaml
   - sounds.yaml
   - switches.yaml
 
-displays:
-  dmd:
-    width: 128
-    height: 32
-    default: true
+hardware:
+  platform: fast
+  driverboards: fast
+  coils: fast
+  hardware_sound_system: fast
 
+# Fast boards should show up on ports /dev/ttyACM0 - /dev/ttyACM2
+# User needs dialout group permissions to access these ports
 fast:
   net:
     controller: neuron
-    port: COM8
+    port: auto
     io_loop:
       cabinet_io:
         model: FP-I/O-0024
@@ -40,44 +42,56 @@ fast:
     default_normal_debounce_open: 4ms
     default_normal_debounce_close: 4ms
   exp:
-    boards:
-      neuron:
-        model: FP-EXP-2000
-      playfield:
-        model: FP-EXP-0071
-        led_fade_time: 0
+    debug: false
     port: auto
     baud: 921600
+    boards:
+      neuron_exp:
+        model: FP-EXP-2000
+      playfield_exp:
+        model: FP-EXP-0081
+  aud:
     debug: false
-  # exp:
-  #   port: COM9
-  #   boards:
-  #     neuron:
-  #       model: FP-EXP-2000
-  #       breakouts:
-  #         - port: 1
-  #           model: FP-PWR-0007
-  #       led_ports:
-  #         - port: 1
-  #           leds: 20
-  #           type: ws2812
-  # lights:
-  #   led1:
-  #     number: neuron-1-1
+    port: auto
+    baud: 230400
+    main_amp_enabled: true
+    sub_amp_enabled: true
+    headphones_amp_enabled: false
+
+    main_steps: 20
+    sub_steps: 20
+    headphones_steps: 20
+
+    default_main_volume: 40
+    default_sub_volume: 30
+    default_headphones_volume: 16
+
+    persist_volume_settings: true
+
+    max_hw_volume_main: 63
+    max_hw_volume_sub: 63
+    max_hw_volume_headphones: 63
+
+    main_levels_list: None
+    sub_levels_list: None
+    headphones_levels_list: None
+
+    link_sub_to_main: true
+    link_headphones_to_main: false
+
+    headphones_level: headphones
+    mute_speakers_with_headphones: true
 
 game:
   balls_per_game: 3
   max_players: 4
-
-hardware:
-  #platform: fast
-  platform: smart_virtual
 
 modes:
   - attack_bumper_upgrade
   - attract
   - base
   - medal
+  - multiplier
   - skillshot
 
 player_vars:
