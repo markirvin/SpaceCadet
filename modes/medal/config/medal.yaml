@@ -1,10 +1,14 @@
 #config_version=6
 
+# From the Space Cadet 3D Pinball digital manual:
+#
+# Medal Targets
+#
 # The bank of medal targets is made up of drop targets. When you drop a medal target,
 # you earn points. When you drop all three medal targets, the blue medal light is
 # turned on. This process repeats itself for each time all three medal targets are
-# dropped until the medal light is turned on. If either the blue or red medal light
-# is turned on when you drop the medal target, you earn extra points. If the purple
+# dropped until the purple medal light is turned on. If either the blue or red medal
+# light is turned on when you drop the medal target, you earn extra points. If the purple
 # medal light is turned on when you drop a medal target, you are awarded an extra ball.
 #
 # Drop    Light
