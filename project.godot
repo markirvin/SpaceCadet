@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="SpaceCadetGMC"
-run/main_scene="res://addons/mpf-gmc/slides/window.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+run/main_scene="uid://ds4gduf8660uj"
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 MPF="*res://addons/mpf-gmc/mpf_gmc.gd"
+
+[display]
+
+window/size/viewport_width=1366
+window/size/viewport_height=768
 
 [editor_plugins]
 

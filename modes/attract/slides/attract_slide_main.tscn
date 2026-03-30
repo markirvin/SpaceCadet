@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://p16gyt4a2eji"]
 
-[ext_resource type="Script" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_72esd"]
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_72esd"]
 
 [sub_resource type="Animation" id="Animation_4j16l"]
 resource_name = "new_animation"
@@ -21,14 +21,14 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yx6pi"]
 _data = {
-"new_animation": SubResource("Animation_4j16l")
+&"new_animation": SubResource("Animation_4j16l")
 }
 
 [node name="Attract_Slide_Main" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1280.0
-offset_bottom = 1024.0
+offset_right = 1366.0
+offset_bottom = 768.0
 script = ExtResource("1_72esd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -53,7 +53,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.713726, 0, 0.713726, 1)
 theme_override_constants/outline_size = 10
 theme_override_constants/shadow_outline_size = 25
-theme_override_font_sizes/font_size = 120
+theme_override_font_sizes/font_size = 200
 text = "Space Cadet"
 horizontal_alignment = 1
 
@@ -64,13 +64,10 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 561.0
-offset_top = 91.0
-offset_right = -405.0
-offset_bottom = 174.0
+offset_top = 137.0
+offset_bottom = 220.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 60
 text = "Press Start"
 horizontal_alignment = 1
@@ -78,6 +75,6 @@ vertical_alignment = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect/Label2"]
 libraries = {
-"": SubResource("AnimationLibrary_yx6pi")
+&"": SubResource("AnimationLibrary_yx6pi")
 }
 autoplay = "new_animation"
